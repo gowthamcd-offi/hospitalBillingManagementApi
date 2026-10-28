@@ -34,3 +34,17 @@ C:\gotm\task\hospitalBillingManagementApiApplication\obj\Debug\net10.0\ref\hospi
 C:\gotm\task\hospitalBillingManagementApiApplication\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\gotm\task\hospitalBillingManagementApiApplication\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\gotm\task\hospitalBillingManagementApiApplication\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\gotm\task\hospitalBillingManagementApiApplication\obj\Debug\net10.0\hospitalBillingManagementApiApplication.sourcelink.json
+C:\gotm\task\hospitalBillingManagementApiApplication\bin\Debug\net10.0\AWSSDK.Core.dll
+C:\gotm\task\hospitalBillingManagementApiApplication\bin\Debug\net10.0\AWSSDK.SecurityToken.dll
+C:\gotm\task\hospitalBillingManagementApiApplication\bin\Debug\net10.0\DnsClient.dll
+C:\gotm\task\hospitalBillingManagementApiApplication\bin\Debug\net10.0\MongoDB.Bson.dll
+C:\gotm\task\hospitalBillingManagementApiApplication\bin\Debug\net10.0\MongoDB.Driver.dll
+C:\gotm\task\hospitalBillingManagementApiApplication\bin\Debug\net10.0\MongoDB.Driver.Core.dll
+C:\gotm\task\hospitalBillingManagementApiApplication\bin\Debug\net10.0\MongoDB.Libmongocrypt.dll
+C:\gotm\task\hospitalBillingManagementApiApplication\bin\Debug\net10.0\SharpCompress.dll
+C:\gotm\task\hospitalBillingManagementApiApplication\bin\Debug\net10.0\Snappier.dll
+C:\gotm\task\hospitalBillingManagementApiApplication\bin\Debug\net10.0\ZstdSharp.dll
+C:\gotm\task\hospitalBillingManagementApiApplication\bin\Debug\net10.0\runtimes\linux\native\libmongocrypt.so
+C:\gotm\task\hospitalBillingManagementApiApplication\bin\Debug\net10.0\runtimes\osx\native\libmongocrypt.dylib
+C:\gotm\task\hospitalBillingManagementApiApplication\bin\Debug\net10.0\runtimes\win\native\mongocrypt.dll
