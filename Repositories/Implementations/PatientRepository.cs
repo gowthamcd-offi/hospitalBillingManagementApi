@@ -27,7 +27,10 @@ public class PatientRepository : IPatientRepository
         var update = Builders<Patient>.Update
             .Set(p => p.PurchasedProducts, patient.PurchasedProducts)
             .Set(p => p.PendingAmount, patient.PendingAmount)
-            .Set(p => p.TotalAmountSpent, patient.TotalAmountSpent);
+            .Set(p => p.TotalAmountSpent, patient.TotalAmountSpent)
+            .Set(p => p.UpiId, patient.UpiId)
+            .Set(p => p.IsPaid, patient.IsPaid)
+            .Set(p => p.PaymentDate, patient.PaymentDate);
 
         var result = await _collection.UpdateOneAsync(filter, update);
         return result.ModifiedCount > 0;
