@@ -25,7 +25,7 @@ public class PatientService : IPatientService
             MobileNo = mobileNo
         };
 
-        return await _patientRepository.AddAsync(patient);
+        return await _patientRepository.CreateAsync(patient);
     }
 
     public async Task<bool> AddMedicineAsync(string identifier, int productId, int quantity)
