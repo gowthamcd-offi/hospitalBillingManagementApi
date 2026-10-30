@@ -10,12 +10,10 @@ namespace hospitalBillingManagement.Controllers;
 public class BillingController : ControllerBase
 {
     private readonly IBillingService _billingService;
-    private readonly IPaymentProcessor _paymentProcessor;
 
-    public BillingController(IBillingService billingService, IPaymentProcessor paymentProcessor)
+    public BillingController(IBillingService billingService)
     {
         _billingService = billingService;
-        _paymentProcessor = paymentProcessor;
     }
 
     [HttpGet("{identifier}")]
@@ -26,13 +24,13 @@ public class BillingController : ControllerBase
         return Ok(patient);
     }
 
-    [HttpPost("pay")]
-    public async Task<ActionResult<bool>> SettleBill([FromQuery] string identifier, [FromBody] BillingRequest request)
+    [HttpPost("{identifier}/pay")]
+    public async Task<ActionResult<bool>> SettleBill(string identifier, [FromBody] BillingRequest request)
     {
         if (string.IsNullOrWhiteSpace(request.PaymentDetail))
             return BadRequest(new { message = "Payment detail is required" });
 
-        var success = await _billingService.SettleBillAsync(identifier, request.PaymentDetail, _paymentProcessor);
+        var success = await _billingService.SettleBillAsync(identifier, request.PaymentDetail);
         
         if (!success)
         {

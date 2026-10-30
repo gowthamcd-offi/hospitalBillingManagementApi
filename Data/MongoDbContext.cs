@@ -15,4 +15,6 @@ public class MongoDbContext
 
     public IMongoCollection<Patient> Patients => _database.GetCollection<Patient>("Patients");
     public IMongoCollection<Product> Products => _database.GetCollection<Product>("Products");
+
+    public IMongoDatabase Database => _database;
 }

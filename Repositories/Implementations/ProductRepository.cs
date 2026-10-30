@@ -1,30 +1,16 @@
 using hospitalBillingManagement.Data;
 using hospitalBillingManagement.Models;
+using hospitalBillingManagement.Repositories.Generic;
 using hospitalBillingManagement.Repositories.Interfaces;
 using MongoDB.Driver;
 
 namespace hospitalBillingManagement.Repositories.Implementations;
 
-public class ProductRepository : IProductRepository
+public class ProductRepository : GenericRepository<Product>, IProductRepository
 {
-    private readonly IMongoCollection<Product> _collection;
-
-    public ProductRepository(MongoDbContext context)
+    public ProductRepository(MongoDbContext context) : base(context, "Products")
     {
-        _collection = context.Products;
         SeedInitialProductsAsync().Wait();
-    }
-
-    public async Task<Product> AddAsync(Product product)
-    {
-        await _collection.InsertOneAsync(product);
-        return product;
-    }
-
-    public async Task<bool> UpdateAsync(Product product)
-    {
-        var result = await _collection.ReplaceOneAsync(p => p.Id == product.Id, product);
-        return result.ModifiedCount > 0;
     }
 
     public async Task<Product?> GetByProductIdAsync(int productId)
@@ -35,11 +21,6 @@ public class ProductRepository : IProductRepository
     public async Task<IEnumerable<Product>> GetByProductIdsAsync(params int[] productIds)
     {
         return await _collection.Find(p => productIds.Contains(p.ProductId)).ToListAsync();
-    }
-
-    public async Task<IEnumerable<Product>> GetAllAsync()
-    {
-        return await _collection.Find(_ => true).ToListAsync();
     }
 
     private async Task SeedInitialProductsAsync()
